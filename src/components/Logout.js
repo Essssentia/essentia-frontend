@@ -1,9 +1,9 @@
 import React from 'react';
-import { jwtDecode } from 'jwt-decode';
-import { useNavigate } from 'react-router-dom';
-import { apiClient } from '../api/client';
+import {jwtDecode} from 'jwt-decode';
+import {useNavigate} from 'react-router-dom';
+import {apiClient} from '../api/client';
 
-const LogoutButton = ({ setMessage })  => {
+const LogoutButton = ({setMessage}) => {
   const navigate = useNavigate();
 
   const isTokenValid = (token) => {
@@ -36,7 +36,7 @@ const LogoutButton = ({ setMessage })  => {
 
     try {
       const response = await apiClient.post('/api/users/logout', {}, {
-        headers: { Authorization: `Bearer ${accessToken}` },
+        headers: {Authorization: `Bearer ${accessToken}`},
       });
 
       if (response.status === 200) {
@@ -56,8 +56,8 @@ const LogoutButton = ({ setMessage })  => {
   };
 
   return (
-      <a href="#" onClick={handleLogout} className="header-link">
-        로그아웃
+      <a href="#" onClick={handleLogout} className="nav-button">
+        <h4>Logout</h4>
       </a>
   );
 };

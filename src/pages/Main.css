@@ -1,6 +1,8 @@
-/* Main.css */
+root {
+  background-color: #f8f5f2;
+  font-family: 'Cormorant Garamond', serif;
+}
 
-/* Global styles */
 body {
   margin: 0;
   padding: 0;
@@ -26,20 +28,52 @@ body {
 
 .header-right {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 15px; /* 버튼 간격 */
 }
 
 .nav-button {
-  padding: 8px 16px;
+  display: inline-flex; /* 요소 내부 텍스트 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  justify-content: center;
+  padding: 10px 16px; /* 동일한 여백 */
   border: none;
   background: none;
   color: white;
   font-size: 1.1em;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
+  line-height: 1; /* 텍스트 높이 균일화 */
+  font-weight: bold;
+}
+
+.nav-button2 {
+  display: inline-flex; /* 요소 내부 텍스트 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  justify-content: center;
+  padding: 10px 16px; /* 동일한 여백 */
+  border: none;
+  background: none;
+  color: black;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  line-height: 1; /* 텍스트 높이 균일화 */
+  font-weight: bold;
+}
+
+.nab-button {
+  text-decoration: none;
 }
 
 .nav-button:hover {
+  transform: translateY(-2px);
+  color: #666;
+}
+
+.nav-button2:hover {
   transform: translateY(-2px);
   color: #666;
 }
@@ -48,6 +82,30 @@ body {
   width: 80px;
   height: 80px;
   animation: rotateLogo 20s linear infinite;
+}
+
+.gradient-transition {
+  height: 1000px;
+  background: linear-gradient(to bottom, #7c5625 0%, #f7f5f1 100%);
+  position: relative;
+}
+
+.tips-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 2rem;
+  color: #453939;
+  text-align: center;
+  font-weight: bold;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.tips-section.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(0);
 }
 
 .modal {
@@ -122,22 +180,8 @@ body {
   }
 }
 
-/*.hero-section {*/
-/*  height: 80vh;*/
-/*  margin-top: 120px;*/
-/*  position: relative;*/
-/*  overflow: hidden;*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*  justify-content: center;*/
-/*  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),*/
-/*  linear-gradient(45deg, #2c1810, #4a3830, #695a67);*/
-/*  background-size: cover;*/
-/*  background-position: center;*/
-/*}*/
-
 .hero-section {
-  height: 100vh; /* 화면 전체를 차지하도록 설정 */
+  height: 100vh;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -345,12 +389,6 @@ body {
 
 .perfume-category[data-type="gourmand"]:hover::after {
   background: radial-gradient(circle, #D4AF37 0%, transparent 70%);
-}
-
-h1 {
-  font-size: 2.5em;
-  font-weight: 300;
-  margin-left: 30px;
 }
 
 h2 {
